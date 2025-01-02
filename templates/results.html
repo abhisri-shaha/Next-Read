@@ -20,9 +20,17 @@
                     <p><strong>Author(s):</strong> {{ book.authors }}</p>
                     <p>
                         <strong>Description:</strong>
-                        <span class="short-desc">{{ book.description[:200] }}...</span>
-                        <span class="full-desc" style="display: none;">{{ book.description }}</span>
-                        <button class="read-more">Read More</button>
+                        <span class="short-desc">
+                            {% if book.description is string %}
+                                {{ book.description[:100] }}...
+                            {% else %}
+                                {{ book.description }}
+                            {% endif %}
+                        </span>
+                        {% if book.description is string and book.description|length > 100 %}
+                            <span class="full-desc" style="display: none;">{{ book.description }}</span>
+                            <button class="read-more">Read More</button>
+                        {% endif %}
                     </p>
                 </div>
                 <div class="book-details">
