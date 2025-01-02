@@ -1,0 +1,120 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    font-family: "Simonetta", serif;
+    background-color: #d7c9ad;
+    color: #353336;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    font-family: "Macondo Swash Caps", serif;
+    font-size: 2.2rem;
+    color: #361526;
+    margin-bottom: 30px;
+}
+
+h2 {
+    font-family: "Simonetta", serif;
+    font-size: 1.4rem;
+    color: #6d3a50;
+    margin-bottom: 10px;
+}
+
+ul {
+    list-style: none;
+    margin: 0 auto;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+li {
+    background-color: #e0ddd5;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.book-info {
+    text-align: left;
+}
+
+.book-details {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 20px;
+    align-items: start;
+}
+
+.book-image img {
+    display: block;
+    max-width: 100%;
+    border-radius: 4px;
+}
+
+.additional-info p {
+    margin: 5px 0;
+}
+
+@media (max-width: 768px) {
+    li {
+        grid-template-columns: 1fr;
+    }
+
+    .book-details {
+        grid-template-columns: 1fr;
+    }
+
+    .book-image img {
+        margin: 0 auto;
+    }
+}
+
+li strong {
+    font-weight: bold;
+}
+
+a {
+    display: block;
+    margin: 20px auto 40px auto;
+    text-align: center;
+    max-width: 200px;
+    padding: 10px 20px;
+    background-color: #361526;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-family: "Simonetta", serif;
+    font-size: 1rem;
+}
+
+a:hover {
+    background-color: #6d3a50;
+}
+
+.read-more {
+    background: none;
+    border: none;
+    color: #361526;
+    cursor: pointer;
+    text-decoration: underline;
+    font-size: 0.9rem;
+    font-family: inherit;
+    padding: 0;
+}
+
+.read-more:hover {
+    color: #6d3a50;
+}

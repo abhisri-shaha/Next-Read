@@ -4,17 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book Recommendation System</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Delius+Swash+Caps&family=Macondo+Swash+Caps&family=Simonetta:ital,wght@0,400;0,900;1,400;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
 </head>
 <body>
-    <h1>Book Recommendation System</h1>
-    <form action="/recommend" method="POST">
-        <label for="title">Title:</label><br>
-        <input type="text" id="title" name="title"><br><br>
-        <label for="authors">Authors:</label><br>
-        <input type="text" id="authors" name="authors"><br><br>
-        <label for="categories">Categories:</label><br>
-        <input type="text" id="categories" name="categories"><br><br>
-        <button type="submit">Get Recommendations</button>
-    </form>
+    <div class="container">
+        <div class="hero">
+            <h1>Next Read</h1>
+            <p>Loved a book? Find your next read here!</p>
+        </div>
+        <form action="/recommend" method="POST" class="recommend-form">
+            <label for="title">Title:</label><br>
+            <input type="text" id="title" name="title"><br><br>
+            <label for="authors">Authors:</label><br>
+            <input type="text" id="authors" name="authors"><br><br>
+            <label for="categories">Categories:</label><br>
+            <input type="text" id="categories" name="categories"><br><br>
+            <button type="submit">Get Recommendations</button>
+        </form>
+    </div>
 </body>
 </html>

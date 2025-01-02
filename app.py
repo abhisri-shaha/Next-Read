@@ -41,10 +41,10 @@ def recommend():
     secondary_query = f"""Title: {top_book['title']}\nAuthors: {top_book['authors']}\nCategories: {top_book['categories']}\nDescription: {top_book['description']}\n"""
     secondary_query_embedding = np.array([embedding_model.embed_query(secondary_query)], dtype='float32')
 
-    # Step 4: Perform a secondary search to get top 20 books
-    D2, I2 = index2.search(secondary_query_embedding, k=20)
+    # Step 4: Perform a secondary search to get top 15 books
+    D2, I2 = index2.search(secondary_query_embedding, k=15)
 
-    # Retrieve the top 20 results
+    # Retrieve the top 15 results
     best_matches = df.iloc[I2.flatten()]
 
     # Render results

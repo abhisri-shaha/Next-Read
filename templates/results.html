@@ -4,19 +4,63 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recommendations</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Delius+Swash+Caps&family=Macondo+Swash+Caps&family=Simonetta:ital,wght@0,400;0,900;1,400;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/recommend.css') }}">
 </head>
 <body>
-    <h1>Top 20 Book Recommendations</h1>
+    <h1>Top Book Recommendations</h1>
     <ul>
         {% for book in books %}
             <li>
-                <h2>{{ book.title }}</h2>
-                <p><strong>Authors:</strong> {{ book.authors }}</p>
-                <p><strong>Categories:</strong> {{ book.categories }}</p>
-                <p><strong>Description:</strong> {{ book.description }}</p>
-            </li>
+                <div class="book-info">
+                    <h2>{{ book.title }}</h2>
+                    <p><strong>Author(s):</strong> {{ book.authors }}</p>
+                    <p>
+                        <strong>Description:</strong>
+                        <span class="short-desc">{{ book.description[:200] }}...</span>
+                        <span class="full-desc" style="display: none;">{{ book.description }}</span>
+                        <button class="read-more">Read More</button>
+                    </p>
+                </div>
+                <div class="book-details">
+                    <div class="book-image">
+                        <img src="{{ book.thumbnail }}" width="100" height="150" alt="{{ book.title }}">
+                    </div>
+                    <div class="additional-info">
+                        <p><strong>Category:</strong> {{ book.categories }}</p>
+                        <p><strong>Pages:</strong> {{ book.num_pages }}</p>
+                        <p><strong>Published year:</strong> {{ book.published_year }}</p>
+                        <p><strong>Average rating:</strong> {{ book.average_rating }}</p>
+                    </div>
+                </div>
+            </li> 
         {% endfor %}
     </ul>
     <a href="/">Search Again</a>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const readMoreButtons = document.querySelectorAll(".read-more");
+        
+            readMoreButtons.forEach(button => {
+                button.addEventListener("click", () => {
+                    const parent = button.closest("p");
+                    const shortDesc = parent.querySelector(".short-desc");
+                    const fullDesc = parent.querySelector(".full-desc");
+        
+                    if (button.textContent === "Read More") {
+                        shortDesc.style.display = "none";
+                        fullDesc.style.display = "inline";
+                        button.textContent = "Read Less";
+                    } else {
+                        shortDesc.style.display = "inline";
+                        fullDesc.style.display = "none";
+                        button.textContent = "Read More";
+                    }
+                });
+            });
+        });
+    </script>     
 </body>
 </html>

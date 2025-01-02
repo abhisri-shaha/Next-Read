@@ -1,0 +1,80 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Full-height container to center content */
+body, html {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Simonetta", serif;
+    background-color: #dbd7ce;
+    color: #353336;
+}
+
+/* Main container */
+.container {
+    text-align: center;
+}
+
+/* Hero section */
+.hero {
+    margin-bottom: 30px;
+}
+
+.hero h1 {
+    font-family: "Macondo Swash Caps", serif;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 3rem;
+    color: #361526;
+
+}
+
+.hero p {
+    font-family: "Delius Swash Caps", serif;
+    font-weight: 400;
+    font-size: 1.2rem;
+    font-style: normal;
+    color: #6d3a50;
+    margin-top: 10px;
+}
+
+.recommend-form {
+    display: inline-block;
+    text-align: left;
+    background-color: #d7c9ad;
+    padding: 20px 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.recommend-form label {
+    font-variant: small-caps;
+    font-weight: bold;
+}
+
+.recommend-form input,
+.recommend-form button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+.recommend-form button {
+    background-color: #361526;
+    color: white;
+    cursor: pointer;
+    font-family: "Simonetta", serif;
+    font-size: medium;
+}
+
+.recommend-form button:hover {
+    background-color: #6d3a50;
+}
