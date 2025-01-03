@@ -1,6 +1,6 @@
 pandas
 numpy
-faiss-gpu
+faiss
 langchain
 langchain-community
 sentence-transformers
